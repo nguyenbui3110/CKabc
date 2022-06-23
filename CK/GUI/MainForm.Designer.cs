@@ -66,6 +66,7 @@
             this.btnDel.TabIndex = 53;
             this.btnDel.Text = "Del";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnEdit
             // 
@@ -75,6 +76,7 @@
             this.btnEdit.TabIndex = 52;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -84,6 +86,7 @@
             this.btnAdd.TabIndex = 51;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dataGridView1
             // 
@@ -101,6 +104,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(160, 22);
             this.txtSearch.TabIndex = 49;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label3
             // 
@@ -118,6 +122,7 @@
             this.cbbHocPhan.Name = "cbbHocPhan";
             this.cbbHocPhan.Size = new System.Drawing.Size(130, 24);
             this.cbbHocPhan.TabIndex = 47;
+            this.cbbHocPhan.SelectedIndexChanged += new System.EventHandler(this.cbbHocPhan_SelectedIndexChanged);
             // 
             // label1
             // 

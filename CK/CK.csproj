@@ -59,6 +59,7 @@
     <Compile Include="BLL\BLL_HocPhan.cs" />
     <Compile Include="BLL\BLL_HocPhanSV.cs" />
     <Compile Include="BLL\BLL_SV.cs" />
+    <Compile Include="DTO\CBBSort.cs" />
     <Compile Include="DTO\HocPhan.cs" />
     <Compile Include="DTO\HocPhan_SV.cs" />
     <Compile Include="DTO\SV.cs" />

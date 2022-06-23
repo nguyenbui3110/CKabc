@@ -44,7 +44,7 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.txtMSSV = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.txtDiemDT = new System.Windows.Forms.TextBox();
+            this.txtDiemBT = new System.Windows.Forms.TextBox();
             this.txtDiemGK = new System.Windows.Forms.TextBox();
             this.txtDiemCK = new System.Windows.Forms.TextBox();
             this.txtTongKet = new System.Windows.Forms.TextBox();
@@ -174,8 +174,9 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 26);
             this.btnCancel.TabIndex = 10;
-            this.btnCancel.Text = "button1";
+            this.btnCancel.Text = "cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
@@ -185,6 +186,7 @@
             this.btnOK.TabIndex = 11;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // txtMSSV
             // 
@@ -200,12 +202,12 @@
             this.txtHoTen.Size = new System.Drawing.Size(189, 22);
             this.txtHoTen.TabIndex = 13;
             // 
-            // txtDiemDT
+            // txtDiemBT
             // 
-            this.txtDiemDT.Location = new System.Drawing.Point(457, 102);
-            this.txtDiemDT.Name = "txtDiemDT";
-            this.txtDiemDT.Size = new System.Drawing.Size(189, 22);
-            this.txtDiemDT.TabIndex = 14;
+            this.txtDiemBT.Location = new System.Drawing.Point(457, 102);
+            this.txtDiemBT.Name = "txtDiemBT";
+            this.txtDiemBT.Size = new System.Drawing.Size(189, 22);
+            this.txtDiemBT.TabIndex = 14;
             // 
             // txtDiemGK
             // 
@@ -262,7 +264,7 @@
             this.Controls.Add(this.txtTongKet);
             this.Controls.Add(this.txtDiemCK);
             this.Controls.Add(this.txtDiemGK);
-            this.Controls.Add(this.txtDiemDT);
+            this.Controls.Add(this.txtDiemBT);
             this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.txtMSSV);
             this.Controls.Add(this.btnOK);
@@ -304,7 +306,7 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.TextBox txtMSSV;
         private System.Windows.Forms.TextBox txtHoTen;
-        private System.Windows.Forms.TextBox txtDiemDT;
+        private System.Windows.Forms.TextBox txtDiemBT;
         private System.Windows.Forms.TextBox txtDiemGK;
         private System.Windows.Forms.TextBox txtDiemCK;
         private System.Windows.Forms.TextBox txtTongKet;

@@ -7,7 +7,7 @@ using CK.DTO;
 
 namespace CK.BLL
 {
-    public class BLL_HocPhan
+    public class BLL_HocPhan:BLL
     {
         private static BLL_HocPhan _Instance;
         public static BLL_HocPhan Instance
@@ -19,6 +19,11 @@ namespace CK.BLL
                 return _Instance;
             }
 
+        }
+
+        internal List<HocPhan> GetAll()
+        {
+            return db.HocPhans.ToList();
         }
     }
 

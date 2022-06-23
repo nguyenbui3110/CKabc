@@ -9,8 +9,8 @@ namespace CK.BLL
 {
     public class BLL
     {
-        protected static QLDiem db;
-        protected BLL()
+        public static QLDiem db;
+        public BLL()
         {
             db = new QLDiem();
         }
