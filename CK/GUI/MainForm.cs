@@ -28,6 +28,11 @@ namespace CK.GUI
             }
             cbbHocPhan.SelectedIndex = 0;
             loadDGV();
+            foreach(DataGridViewColumn i in dataGridView1.Columns)
+            {
+                cbbSort.Items.Add(new CBBSort { value = i.Index, name = i.HeaderText });
+            }
+            cbbSort.SelectedIndex = 0;
         }
         public void loadDGV()
         {
@@ -103,6 +108,57 @@ namespace CK.GUI
                 DetailForm detail = new DetailForm(Convert.ToInt16(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
                 detail.d = new DetailForm.Mydel(loadDGV);
                 detail.Show();
+            }
+        }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            var query = BLL_HocPhanSV.Instance.GetInfoBySearchBox(txtSearch.Text, cbbHocPhan.SelectedItem.ToString());
+            var list = query.Select(p => new
+            {
+                p.ID,
+                p.SV.Name,
+                p.SV.LopSH,
+                p.MaHocPhan,
+                p.DiemBT,
+                p.DiemGK,
+                p.DiemCK,
+                tongket = p.DiemBT * 0.2 + p.DiemGK * 0.2 + p.DiemCK * 0.2,
+                p.NgayThi
+
+            });
+            dataGridView1.DataSource = list.ToList();
+            switch (cbbSort.SelectedIndex)
+            {
+                case 0:
+                    dataGridView1.DataSource= list.OrderBy(x=>x.ID).ToList();
+                    break;
+                case 1:
+                    dataGridView1.DataSource = list.OrderBy(x => x.Name).ToList();
+                    break;
+                case 2:
+                    dataGridView1.DataSource = list.OrderBy(x => x.LopSH).ToList();
+                    break;
+                case 3:
+                    dataGridView1.DataSource = list.OrderBy(x => x.MaHocPhan).ToList();
+                    break;
+                case 4:
+                    dataGridView1.DataSource = list.OrderBy(x => x.DiemBT).ToList();
+                    break;
+                case 5:
+                    dataGridView1.DataSource = list.OrderBy(x => x.DiemGK).ToList();
+                    break;
+                case 6:
+                    dataGridView1.DataSource = list.OrderBy(x => x.DiemCK).ToList();
+                    break;
+                case 7:
+                    dataGridView1.DataSource = list.OrderBy(x => x.tongket).ToList();
+                    break;
+                case 8:
+                    dataGridView1.DataSource = list.OrderBy(x => x.NgayThi).ToList();
+                    break;
+                default:
+                    break;
             }
         }
     }

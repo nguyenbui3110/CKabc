@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CK.DTO;
 namespace CK.BLL
 {
-    public class BLL_SV
+    public class BLL_SV:BLL
     {
         private static BLL_SV _Instance;
         public static BLL_SV Instance
@@ -18,6 +18,18 @@ namespace CK.BLL
                 return _Instance;
             }
 
+        }
+        public void add(SV sv)
+        {
+            try
+            {
+                db.SVs.Add(sv);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
     }

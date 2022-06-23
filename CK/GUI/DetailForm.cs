@@ -42,6 +42,8 @@ namespace CK.GUI
             {
                 txtMSSV.Enabled = false;
                 txtHoTen.Enabled = false;
+                rbNam.Enabled = false;
+                rbNu.Enabled = false;
                 txtDiemCK.Text = temp.DiemCK.ToString(); 
                 txtDiemGK.Text= temp.DiemGK.ToString();
                 txtDiemBT.Text=temp.DiemBT.ToString();
@@ -64,7 +66,33 @@ namespace CK.GUI
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if (add)
+            {
+                SV tempSV = new SV();
+                tempSV.Name = txtHoTen.Text;
+                tempSV.MSSV = txtMSSV.Text;
+                tempSV.Gender = rbNam.Checked;
+                BLL_SV.Instance.add(tempSV);
+                temp.DiemBT = Convert.ToDouble(txtDiemBT.Text);
+                temp.DiemGK = Convert.ToDouble(txtDiemGK.Text);
+                temp.DiemCK = Convert.ToDouble(txtDiemCK.Text);
+                temp.NgayThi = dateTimePicker1.Value;
+                tempSV.LopSH = cbbLopSH.Text;
+                temp.SV = tempSV;
+                temp.HocPhan = BLL_HocPhan.Instance.FindWithName(cbbHocPhan.Text);
+                BLL_HocPhanSV.Instance.add(temp);
+            }
+            else
+            {
+                temp.DiemBT = Convert.ToDouble(txtDiemBT.Text);
+                temp.DiemGK = Convert.ToDouble(txtDiemGK.Text);
+                temp.DiemCK = Convert.ToDouble(txtDiemCK.Text);
+                temp.NgayThi = dateTimePicker1.Value;
+                BLL_HocPhanSV.Instance.Update();
+            }
 
+            d();
+            this.Close();
         }
     }
 }

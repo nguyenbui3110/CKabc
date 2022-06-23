@@ -25,6 +25,12 @@ namespace CK.BLL
         {
             return db.HocPhans.ToList();
         }
+
+        internal HocPhan FindWithName(string text)
+        {
+            var query = from c in db.HocPhans where c.TenHocPhan==text select c;
+            return query.FirstOrDefault();
+        }
     }
 
 }

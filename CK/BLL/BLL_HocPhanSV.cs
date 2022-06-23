@@ -43,5 +43,16 @@ namespace CK.BLL
             db.HocPhan_SVs.Remove(db.HocPhan_SVs.Find(Convert.ToInt32(ID)));
             db.SaveChanges();
         }
+
+        internal void add(HocPhan_SV temp)
+        {
+            db.HocPhan_SVs.Add(temp);
+            db.SaveChanges();
+        }
+
+        internal void Update()
+        {
+            db.SaveChanges();
+        }
     }
 }
