@@ -208,6 +208,7 @@
             this.txtDiemBT.Name = "txtDiemBT";
             this.txtDiemBT.Size = new System.Drawing.Size(189, 22);
             this.txtDiemBT.TabIndex = 14;
+            this.txtDiemBT.TextChanged += new System.EventHandler(this.txtDiemBT_TextChanged);
             // 
             // txtDiemGK
             // 
@@ -215,6 +216,7 @@
             this.txtDiemGK.Name = "txtDiemGK";
             this.txtDiemGK.Size = new System.Drawing.Size(189, 22);
             this.txtDiemGK.TabIndex = 15;
+            this.txtDiemGK.TextChanged += new System.EventHandler(this.txtDiemBT_TextChanged);
             // 
             // txtDiemCK
             // 
@@ -222,9 +224,11 @@
             this.txtDiemCK.Name = "txtDiemCK";
             this.txtDiemCK.Size = new System.Drawing.Size(189, 22);
             this.txtDiemCK.TabIndex = 16;
+            this.txtDiemCK.TextChanged += new System.EventHandler(this.txtDiemBT_TextChanged);
             // 
             // txtTongKet
             // 
+            this.txtTongKet.Enabled = false;
             this.txtTongKet.Location = new System.Drawing.Point(457, 217);
             this.txtTongKet.Name = "txtTongKet";
             this.txtTongKet.Size = new System.Drawing.Size(189, 22);
@@ -239,7 +243,11 @@
             // 
             // cbbLopSH
             // 
+            this.cbbLopSH.AllowDrop = true;
+            this.cbbLopSH.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbbLopSH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbLopSH.FormattingEnabled = true;
+            this.cbbLopSH.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cbbLopSH.Location = new System.Drawing.Point(130, 147);
             this.cbbLopSH.Name = "cbbLopSH";
             this.cbbLopSH.Size = new System.Drawing.Size(189, 24);
@@ -247,6 +255,8 @@
             // 
             // cbbHocPhan
             // 
+            this.cbbHocPhan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbbHocPhan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbHocPhan.FormattingEnabled = true;
             this.cbbHocPhan.Location = new System.Drawing.Point(130, 185);
             this.cbbHocPhan.Name = "cbbHocPhan";

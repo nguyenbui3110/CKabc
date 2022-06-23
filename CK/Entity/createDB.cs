@@ -15,8 +15,8 @@ namespace CK.Entity
             context.HocPhans.AddRange(new HocPhan[]
             {
                 new HocPhan{MaHocPhan="BK01",TenHocPhan="Thiết Kế HĐT"},
-                new HocPhan{MaHocPhan="Bk02",TenHocPhan="Lập trình Java"},
-                new HocPhan{MaHocPhan="Bk03",TenHocPhan="Lập trình C#"},
+                new HocPhan{MaHocPhan="BK02",TenHocPhan="Lập trình Java"},
+                new HocPhan{MaHocPhan="BK03",TenHocPhan="Lập trình C#"},
             });
             context.SVs.AddRange(new SV[]
             {
@@ -47,7 +47,7 @@ namespace CK.Entity
                 new HocPhan_SV{MaHocPhan="BK03",MSSV="102200205",DiemBT=6,DiemCK=5,DiemGK=1,NgayThi=DateTime.Now}
 
             });
-
+            context.SaveChanges();
         }
     }
 }

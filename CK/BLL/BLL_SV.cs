@@ -31,6 +31,10 @@ namespace CK.BLL
 
             }
         }
+        public List<SV> getAll()
+        {
+            return db.SVs.ToList();
+        }
 
     }
 }

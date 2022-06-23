@@ -16,8 +16,8 @@ namespace CK.GUI
     {
         public delegate void Mydel();
         public Mydel d { get; set; }
-        bool add = true;
-        HocPhan_SV temp;
+        public bool add = true;
+        public HocPhan_SV temp;
         public DetailForm(int ID=0)
         {
             InitializeComponent();
@@ -36,7 +36,13 @@ namespace CK.GUI
         {
             foreach (HocPhan item in BLL_HocPhan.Instance.GetAll())
             {
-                cbbHocPhan.Items.Add(item.TenHocPhan);
+                if (!cbbHocPhan.Items.Contains(item.TenHocPhan))
+                    cbbHocPhan.Items.Add(item.TenHocPhan);
+            }
+            foreach (SV item in BLL_SV.Instance.getAll())
+            {
+                if(!cbbLopSH.Items.Contains(item.LopSH))
+                    cbbLopSH.Items.Add(item.LopSH);
             }
             if (!add)
             {
@@ -47,6 +53,8 @@ namespace CK.GUI
                 txtDiemCK.Text = temp.DiemCK.ToString(); 
                 txtDiemGK.Text= temp.DiemGK.ToString();
                 txtDiemBT.Text=temp.DiemBT.ToString();
+                cbbHocPhan.Text=temp.HocPhan.TenHocPhan.ToString();
+                cbbLopSH.Text= temp.SV.LopSH.ToString();
                 dateTimePicker1.Value = temp.NgayThi;
                 txtHoTen.Text = temp.SV.Name;
                 txtMSSV.Text = temp.MSSV;
@@ -93,6 +101,19 @@ namespace CK.GUI
 
             d();
             this.Close();
+        }
+
+        private void txtDiemBT_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double tongket = Convert.ToDouble(txtDiemBT.Text) * 0.2 + Convert.ToDouble(txtDiemGK.Text) * 0.2 + Convert.ToDouble(txtDiemCK.Text) * 0.3;
+                txtTongKet.Text = tongket.ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

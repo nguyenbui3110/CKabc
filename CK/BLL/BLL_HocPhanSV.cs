@@ -21,7 +21,7 @@ namespace CK.BLL
         }
         public HocPhan_SV find(int ID)
         {
-            return db.HocPhan_SVs.Find(ID);
+            return (from c in db.HocPhan_SVs where c.ID==ID select c).FirstOrDefault();
         }
         public List<HocPhan_SV> GetInfoBySearchBox(string TenSV,string TenHocPhan)
         {

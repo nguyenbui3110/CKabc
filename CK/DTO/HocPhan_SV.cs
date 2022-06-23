@@ -18,10 +18,11 @@ namespace CK.DTO
         public DateTime NgayThi { get; set; }
         [ForeignKey("HocPhan")]
         public string MaHocPhan { get; set; }
+        public virtual HocPhan HocPhan { get; set; }
+
         [ForeignKey("SV")]
         public string MSSV { get; set; }
         public virtual SV SV { get; set; }
-        public virtual HocPhan HocPhan { get; set; }
 
 
     }
